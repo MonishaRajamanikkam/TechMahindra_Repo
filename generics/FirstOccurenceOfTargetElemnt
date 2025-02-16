@@ -1,0 +1,24 @@
+package generics;
+import java.util.*;
+
+public class FirstOccurenceOfTargetElemnt {
+    
+    // Generic method to find the index of the first occurrence of an element
+    public static <T> int findFirstIndex(List<T> list, T target) {
+        for (int i = 0; i < list.size(); i++) {
+            if (Objects.equals(list.get(i), target)) {
+                return i; // Return index of first occurrence
+            }
+        }
+        return -1; // Return -1 if not found
+    }
+    
+    public static void main(String[] args) {
+        List<Integer> intList = Arrays.asList(1, 9, 3, 4, 7, 5);
+        List<String> strList = Arrays.asList("grapes", "orange", "banana", "banana");
+        
+        System.out.println("Index of 7 in intList: " + findFirstIndex(intList, 7)); // Output: 1
+        System.out.println("Index of 'banana' in strList: " + findFirstIndex(strList, "banana")); // Output: 1
+        System.out.println("Index of 10 in intList: " + findFirstIndex(intList, 10)); // Output: -1
+    }
+}
