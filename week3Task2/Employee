@@ -1,0 +1,59 @@
+package task2;
+
+public class Employee {
+	 private int empId;
+	    private String empName;
+	    private double sal;
+	    private int yearsOfExperience;
+	    
+	    // Constructor
+	    public Employee(int empId, String empName, double sal, int yearsOfExperience) {
+	        this.empId = empId;
+	        this.empName = empName;
+	        this.sal = sal;
+	        this.yearsOfExperience = yearsOfExperience;
+	    }
+	    
+	    // Setter method
+	    public void setEmployeeDetails(int empId, String empName, double sal, int yearsOfExperience) {
+	        this.empId = empId;
+	        this.empName = empName;
+	        this.sal = sal;
+	        this.yearsOfExperience = yearsOfExperience;
+	    }
+	    
+	    // Getter method
+	    public void getEmployeeDetails() {
+	        System.out.println("Employee ID: " + empId);
+	        System.out.println("Employee Name: " + empName);
+	        System.out.println("Salary: " + sal);
+	        System.out.println("Years of Experience: " + yearsOfExperience);
+	    }
+	    
+	    // Loan Eligibility Check
+	    public double getLoanEligibility() {
+	        if (yearsOfExperience > 5) {
+	            double annualSalary = sal * 12;
+	            if (annualSalary >= 15_00_000) {
+	                return 7_00_000;
+	            } else if (annualSalary >= 10_00_000) {
+	                return 5_00_000;
+	            } else if (annualSalary >= 6_00_000) {
+	                return 2_00_000;
+	            }
+	        }
+	        return 0; // Not eligible
+	    }
+	    public static void main(String[] args) {
+	        Employee emp = new Employee(1005, "Anu", 100000, 6);
+	        emp.getEmployeeDetails();
+	        double loanAmount = emp.getLoanEligibility();
+	        if (loanAmount > 0) {
+	            System.out.println("Eligible Loan Amount: Rs." + loanAmount);
+	        } else {
+	            System.out.println("Not eligible for a loan.");
+	        }
+	    }
+	}
+
+
