@@ -1,0 +1,104 @@
+import java.sql.*;
+import java.util.Scanner;
+
+public class MenuDrivenDatabaseOperations {
+    private static final String URL = "jdbc:mysql://localhost:3306/your_database";
+    private static final String USER = "your_username";
+    private static final String PASSWORD = "your_password";
+
+    public static void main(String[] args) {
+        try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
+             Scanner scanner = new Scanner(System.in)) {
+            
+            while (true) {
+                System.out.println("\nMenu:");
+                System.out.println("1. Insert a new Row");
+                System.out.println("2. Update a Row");
+                System.out.println("3. Delete a Row");
+                System.out.println("4. Select a Row");
+                System.out.println("5. Exit");
+                System.out.print("Enter your choice: ");
+                int choice = scanner.nextInt();
+                
+                switch (choice) {
+                    case 1:
+                        insertRow(connection, scanner);
+                        break;
+                    case 2:
+                        updateRow(connection, scanner);
+                        break;
+                    case 3:
+                        deleteRow(connection, scanner);
+                        break;
+                    case 4:
+                        selectRow(connection, scanner);
+                        break;
+                    case 5:
+                        System.out.println("Exiting...");
+                        return;
+                    default:
+                        System.out.println("Invalid choice. Please try again.");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void insertRow(Connection connection, Scanner scanner) throws SQLException {
+        System.out.print("Enter ID: ");
+        int id = scanner.nextInt();
+        System.out.print("Enter Value: ");
+        int value = scanner.nextInt();
+        
+        String query = "INSERT INTO your_table (column1, column2) VALUES (?, ?)";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setInt(1, id);
+            preparedStatement.setInt(2, value);
+            preparedStatement.executeUpdate();
+            System.out.println("Row inserted successfully.");
+        }
+    }
+
+    private static void updateRow(Connection connection, Scanner scanner) throws SQLException {
+        System.out.print("Enter ID to update: ");
+        int id = scanner.nextInt();
+        System.out.print("Enter new Value: ");
+        int newValue = scanner.nextInt();
+        
+        String query = "UPDATE your_table SET column2 = ? WHERE column1 = ?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setInt(1, newValue);
+            preparedStatement.setInt(2, id);
+            preparedStatement.executeUpdate();
+            System.out.println("Row updated successfully.");
+        }
+    }
+
+    private static void deleteRow(Connection connection, Scanner scanner) throws SQLException {
+        System.out.print("Enter ID to delete: ");
+        int id = scanner.nextInt();
+        
+        String query = "DELETE FROM your_table WHERE column1 = ?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+            System.out.println("Row deleted successfully.");
+        }
+    }
+
+    private static void selectRow(Connection connection, Scanner scanner) throws SQLException {
+        System.out.print("Enter ID to select: ");
+        int id = scanner.nextInt();
+        
+        String query = "SELECT * FROM your_table WHERE column1 = ?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setInt(1, id);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                while (resultSet.next()) {
+                    System.out.println("ID: " + resultSet.getInt("column1") + ", Value: " + resultSet.getInt("column2"));
+                }
+            }
+        }
+    }
+}
