@@ -1,0 +1,39 @@
+package JDBC;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class UpdateRowExample {
+    
+    private static final String URL = "jdbc:mysql://localhost:3306/your_database";
+    private static final String USER = "your_username";
+    private static final String PASSWORD = "your_password";
+    private static final String UPDATE_QUERY = "UPDATE your_table SET column2 = ? WHERE column1 = ?";
+
+    public static void main(String[] args) {
+        try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
+             Scanner scanner = new Scanner(System.in)) {
+            
+            System.out.print("Enter the ID to update: ");
+            int id = scanner.nextInt();
+            
+            System.out.print("Enter the new value: ");
+            int newValue = scanner.nextInt();
+            
+            updateRow(connection, id, newValue);
+            System.out.println("Row updated successfully.");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void updateRow(Connection connection, int id, int newValue) throws SQLException {
+        try (PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_QUERY)) {
+            preparedStatement.setInt(1, newValue);
+            preparedStatement.setInt(2, id);
+            preparedStatement.executeUpdate();
+        }
+    }
+}
