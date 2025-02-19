@@ -1,0 +1,40 @@
+package JDBC;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class RecursiveInsertExample {
+    
+    private static final String URL = "jdbc:mysql://localhost:3306/your_database";
+    private static final String USER = "your_username";
+    private static final String PASSWORD = "your_password";
+    private static final String INSERT_QUERY = "INSERT INTO your_table (column1, column2) VALUES (?, ?)";
+
+    public static void main(String[] args) {
+        try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD)) {
+            int[][] data = {
+                {1, 100}, {2, 200}, {3, 300}, {4, 400}, {5, 500}
+            };
+            recursiveInsert(connection, data, 0);
+            System.out.println("Data inserted successfully.");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void recursiveInsert(Connection connection, int[][] data, int index) throws SQLException {
+        if (index >= data.length) {
+            return; // Base case: exit recursion
+        }
+        
+        try (PreparedStatement preparedStatement = connection.prepareStatement(INSERT_QUERY)) {
+            preparedStatement.setInt(1, data[index][0]);
+            preparedStatement.setInt(2, data[index][1]);
+            preparedStatement.executeUpdate();
+        }
+        
+        // Recursive call to insert the next row
+        recursiveInsert(connection, data, index + 1);
+    }
+}
