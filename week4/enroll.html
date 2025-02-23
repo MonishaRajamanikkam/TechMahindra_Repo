@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Enrollment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Enroll in a Course</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="instructors.html">Instructors</a></li>
+            <li><a href="enrollment.html">Enroll</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="enrollment-form">
+        <h2>Fill in your details</h2>
+        <form id="enrollmentForm">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="courseSelect">Select Course:</label>
+            <select id="courseSelect" required>
+                <option value="">-- Choose a Course --</option>
+                <option value="JavaScript Basics">JavaScript Basics</option>
+                <option value="Advanced JavaScript">Advanced JavaScript</option>
+                <option value="Python Programming">Python Programming</option>
+                <option value="Data Science with Python">Data Science with Python</option>
+            </select>
+
+            <button type="submit">Enroll</button>
+        </form>
+
+        <p id="confirmationMessage"></p>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Online Education Platform</p>
+</footer>
+
+<script src="scripts/enrollment.js"></script>
+</body>
+</html>
