@@ -1,0 +1,27 @@
+[
+    {
+
+        "image":"image2.jpg",
+        "name": "Elsa",
+        "bio": "Expert in JavaScript and front-end development.",
+        "courses": ["JavaScript Basics", "Advanced JavaScript"]
+    },
+    {
+        "image": "image5.jpg",
+        "name": "Jane Smith",
+        "bio": "Specialist in HTML, CSS, and responsive web design.",
+        "courses": ["HTML & CSS for Beginners", "CSS Grid and Flexbox"]
+    },
+    {
+        "image": "image4.jpg",
+        "name": "Alice Joe",
+        "bio": "Python developer with a passion for teaching.",
+        "courses": ["Python Programming", "Data Science with Python"]
+    },
+    {
+        "image": "image1.jpg",
+        "name": "Bob Brown",
+        "bio": "ReactJS and modern front-end frameworks expert.",
+        "courses": ["ReactJS Development", "Full-Stack JavaScript"]
+    }
+]

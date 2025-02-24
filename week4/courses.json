@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "title": "JavaScript for Beginners",
+        "description": "Learn the fundamentals of JavaScript, including variables, loops, and functions. Build interactive web pages with real-world examples.",
+        "prerequisites": ["Basic HTML", "Basic CSS"],
+        "reviews": [
+            {
+                "user": "Alice Johnson",
+                "rating": 5,
+                "comment": "Great course! Very well explained for beginners."
+            },
+            {
+                "user": "Mark Smith",
+                "rating": 4,
+                "comment": "Good introduction, but could use more exercises."
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Advanced Python",
+        "description": "Deep dive into Python with topics like OOP, file handling, multithreading, and web scraping. Ideal for intermediate learners.",
+        "prerequisites": ["Basic Python knowledge"],
+        "reviews": [
+            {
+                "user": "Sophia Lee",
+                "rating": 5,
+                "comment": "Loved the advanced topics! The projects were really useful."
+            },
+            {
+                "user": "James Brown",
+                "rating": 4,
+                "comment": "Good course, but requires prior Python experience."
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Web Development Bootcamp",
+        "description": "Master full-stack web development with hands-on projects using HTML, CSS, JavaScript, Node.js, and React.",
+        "prerequisites": ["Basic programming knowledge"],
+        "reviews": [
+            {
+                "user": "Emma Wilson",
+                "rating": 5,
+                "comment": "Amazing course! Covers everything from front-end to back-end."
+            },
+            {
+                "user": "Daniel Carter",
+                "rating": 4,
+                "comment": "Good content, but some topics felt rushed."
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "React.js for Frontend Developers",
+        "description": "Learn how to build modern, scalable web applications using React.js, hooks, state management, and component-based architecture.",
+        "prerequisites": ["JavaScript", "HTML & CSS", "Basic ES6"],
+        "reviews": [
+            {
+                "user": "Chris Evans",
+                "rating": 5,
+                "comment": "Excellent hands-on course for React beginners!"
+            },
+            {
+                "user": "Sarah Connor",
+                "rating": 4,
+                "comment": "Very informative, but could use more real-world projects."
+            }
+        ]
+    }
+]
