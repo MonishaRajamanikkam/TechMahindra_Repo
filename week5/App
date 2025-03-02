@@ -1,0 +1,60 @@
+import { Grid, GridItem, Text, Button, Flex } from "@chakra-ui/react";
+import { useState } from "react";
+import ButtonComp from "./components/ButtonComp";
+import NavBar from "./components/NavBar";
+import GameCard from "./components/GameCard";
+import Sidebar from "./components/Sidebar";
+
+function App() {
+  const [page, setPage] = useState(1);
+
+  return (
+    <>
+      <ButtonComp />
+      <Grid
+        templateAreas={`
+          "nav nav"
+          "side main"
+          "footer footer"
+        `}
+        gridTemplateRows={"auto 1fr auto"}
+        gridTemplateColumns={"200px 1fr"}
+        minH="100vh"
+      >
+        {/* Navbar */}
+        <GridItem area={"nav"} bg={"gray.300"} p={4}>
+          <NavBar />
+          <Text>Nav</Text>
+        </GridItem>
+
+        {/* Sidebar */}
+        <GridItem area={"side"} bg={"red"} p={4}>
+          <Sidebar />
+        </GridItem>
+
+        {/* Main Content */}
+        <GridItem area={"main"} bg={"green.200"} p={4}>
+          <GameCard page={page} />
+          
+          {/* Pagination Controls */}
+          <Flex justify="center" mt={4} gap={4}>
+            <Button onClick={() => setPage((prev) => Math.max(prev - 1, 1))} isDisabled={page === 1} colorScheme="teal">
+              ⬅ Prev
+            </Button>
+            <Text fontSize="lg">Page {page}</Text>
+            <Button onClick={() => setPage((prev) => prev + 1)} colorScheme="teal">
+              Next ➡
+            </Button>
+          </Flex>
+        </GridItem>
+
+        {/* Footer */}
+        <GridItem area={"footer"} bg={"gray.800"} color={"white"} textAlign={"center"} p={3}>
+          <Text>&copy; 2025 Game Store. All Rights Reserved.</Text>
+        </GridItem>
+      </Grid>
+    </>
+  );
+}
+
+export default App;
