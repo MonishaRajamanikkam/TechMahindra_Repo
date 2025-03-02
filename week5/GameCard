@@ -1,0 +1,121 @@
+import { Card, CardBody, Image, Text ,SimpleGrid} from "@chakra-ui/react";
+
+
+function GameCard(){
+  return <>
+  <SimpleGrid spacing={4} templateColumns='repeat(auto-fill, minmax(200px, 1fr))'>
+  <Card>
+    <CardBody>
+        <Image src="https://m.media-amazon.com/images/I/716v8+bvODL.jpg"></Image>
+        <Text>AfterMath</Text>
+    </CardBody>
+    </Card>
+
+    <Card>
+    <CardBody>
+        <Image src="https://img.redbull.com/images/c_crop,x_1265,y_0,h_1406,w_1125/c_fill,w_450,h_600/q_auto:low,f_auto/redbullcom/2018/05/21/9ec942da-83bb-419a-a221-227751f976d1/fortnite-battle-royale"></Image>
+        <Text>Fortinite</Text>
+    </CardBody>
+    </Card>
+
+    <Card>
+    <CardBody>
+        <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5C2LcaKu6ihrmPKF0Esd3SbOVWtbeJqtgGQ&s"></Image>
+        <Text>Marvel rivals</Text>
+    </CardBody>
+    </Card>
+
+    <Card>
+    <CardBody>
+        <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4ejHf7PfXc2_Ubp4crk65Y0zVbiicr3CgPA&s"></Image>
+        <Text>Vectaria</Text>
+    </CardBody>
+    </Card>
+    <Card>
+    <CardBody>
+        <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjXz6f2XgTDzKW6Qn8QBVfoNaYTgLMrinb2Q&s"></Image>
+        <Text>Evil Dead</Text>
+    </CardBody>
+    </Card>
+    <Card>
+    <CardBody>
+        <Image src="https://upload.wikimedia.org/wikipedia/en/c/ce/BGE-cover.jpg"></Image>
+        <Text>Beyond Good&Evil</Text>
+    </CardBody>
+    </Card>
+    <Card>
+    <CardBody>
+        <Image src="https://m.media-amazon.com/images/M/MV5BNGY5MTQ5NGItMDQ3Zi00MGRhLWI2NjktMjliZTRhZjA1YTZhXkEyXkFqcGc@._V1_.jpg"></Image>
+        <Text>Evil Dead</Text>
+    </CardBody>
+    </Card>
+    <Card>
+    <CardBody>
+        <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRvtn_e98CiaUncomfRuw1yQp4UpFlmjHhKw&s"></Image>
+        <Text>Devil West</Text>
+    </CardBody>
+    </Card>
+    <Card>
+    <CardBody>
+        <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6MeHGY8IOqjKwBVYpkAaiIefwlzRsmyFuLA&s"></Image>
+        <Text>RE:Verse</Text>
+    </CardBody>
+    </Card>
+    <Card>
+    <CardBody>
+        <Image src="https://yt3.googleusercontent.com/715hUhDTu0xk1Mg_qL69K-aCc3QzduWYQEfiHlcYYOP55zBZrAwRtS-d7XXhSPfEht_wzx60Tw"></Image>
+        <Text>Free fire</Text>
+    </CardBody>
+    </Card>
+    <Card>
+    <CardBody>
+        <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9n3-eDHB2LcPntjIiEXcXYB3RNkH0-wvRbg&s"></Image>
+        <Text>Squid Game-2</Text>
+    </CardBody>
+    </Card>
+    <Card>
+    <CardBody>
+        <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScPIsF2t7ipKIoSgpTsrYKC-bRNMxDOm0ojg&s"></Image>
+        <Text>Beast Game</Text>
+    </CardBody>
+    </Card>
+    <Card>
+    <CardBody>
+        <Image src="https://r.res.easebar.com/pic/20241209/37a43c63-e834-4ca7-905e-becaa546229b.jpg"></Image>
+        <Text>NetEase </Text>
+    </CardBody>
+    </Card>
+    <Card>
+    <CardBody>
+        <Image src="https://lumiere-a.akamaihd.net/v1/images/sw-jedi-survivor-key-art-1080x1080_c38222d5.jpeg?region=0%2C0%2C1080%2C1080"></Image>
+        <Text>The Jedi Survivor </Text>
+    </CardBody>
+    </Card>
+    <Card>
+    <CardBody>
+        <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyPF4Z3XB7kC9iXLHLkLYmwc0Whq0Gx0fqOg&s"></Image>
+        <Text>Crime Boss </Text>
+    </CardBody>
+    </Card>
+    <Card>
+    <CardBody>
+        <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd4_Zk11ynwvQnwkgzqgWiL4jZMkPme3WQWw&s"></Image>
+        <Text>Sonic Shadow </Text>
+    </CardBody>
+    </Card>
+    <Card>
+    <CardBody>
+        <Image src="https://cdn.marvel.com/content/1x/marvelvscapcom_lob_crd_01.jpg"></Image>
+        <Text>Fighting Collection </Text>
+    </CardBody>
+    </Card>
+    <Card>
+    <CardBody>
+        <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7MwyStLmtOTBiagjALYLPavZjZt4G-OrjXg&s"></Image>
+        <Text>Roblex </Text>
+    </CardBody>
+    </Card>
+    </SimpleGrid>
+</>
+}
+export default GameCard;
