@@ -1,0 +1,43 @@
+<div class="events-container">
+  <!-- Search Input -->
+  <div class="search-container">
+    <input
+      type="text"
+      [(ngModel)]="searchLocation"
+      placeholder="🔍 Search events by venue..."
+      class="search-input"
+    />
+  </div>
+
+  <!-- Events List -->
+  <div class="event-list">
+    <div 
+      *ngFor="let event of events | locationFilter: searchLocation" 
+      class="event-card"
+    >
+      <img 
+        [src]="event.images?.[0]?.url || 'assets/default-event.jpg'" 
+        alt="{{ event.name }}" 
+        class="event-image" 
+      />
+      <h3 class="event-title">{{ event.name }}</h3>
+      <p class="event-info"><strong>📅 Date:</strong> {{ event.dates.start.localDate }}</p>
+      <p class="event-info"><strong>📍 Venue:</strong> {{ event._embedded.venues[0].name }}</p>
+      
+      <button class="view-details-button" (click)="viewDetails(event.id)">
+        🎟 View Details
+      </button>
+    </div>
+  </div>
+
+  <!-- Load More Button -->
+  <div class="load-more-container">
+    <button 
+      *ngIf="currentPage < totalPages" 
+      (click)="loadMore()" 
+      class="load-more-button"
+    >
+      ⏭ Load More
+    </button>
+  </div>
+</div>

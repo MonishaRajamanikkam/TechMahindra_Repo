@@ -1,0 +1,26 @@
+<div class="event-detail-container" *ngIf="event">
+  <h1 class="event-title">{{ event.name }}</h1>
+
+  <img 
+    [src]="event.images?.[0]?.url || 'assets/default-event.jpg'" 
+    alt="{{ event.name }}" 
+    class="event-image" 
+  />
+
+  <div class="event-info">
+    <p><strong>📅 Date:</strong> {{ event.dates.start.localDate }} at {{ event.dates.start.localTime || 'TBA' }}</p>
+    <p><strong>📍 Venue:</strong> {{ event._embedded?.venues[0]?.name || 'Not specified' }}</p>
+    <p><strong>🌍 Location:</strong> 
+      {{ event._embedded?.venues[0]?.city?.name || 'Unknown' }}, 
+      {{ event._embedded?.venues[0]?.country?.name || 'Unknown' }}
+    </p>
+  </div>
+
+  <p class="event-description">
+    <strong>ℹ Description:</strong> {{ event.info || 'No description available.' }}
+  </p>
+
+  <a [href]="event.url" target="_blank" class="buy-tickets-button">
+    🎟 Buy Tickets
+  </a>
+</div>

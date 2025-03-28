@@ -1,0 +1,29 @@
+/* Custom Navbar Styling */
+.custom-navbar {
+  background-color: #ff5733 !important; /* Change this color as needed */
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+  color: white !important;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.navbar-nav .nav-link:hover {
+  color: #ffff99 !important; /* Light yellow hover effect */
+}
+
+/* Logout Button Styling */
+.logout-btn {
+  color: rgb(255, 200, 200) !important;
+  font-weight: bold;
+}
+
+.logout-btn:hover {
+  color: red !important;
+}

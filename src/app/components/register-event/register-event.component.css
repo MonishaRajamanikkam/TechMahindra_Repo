@@ -1,0 +1,81 @@
+/* Centering the form */
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #ff6f61, #de3d83);
+}
+
+/* Registration Card */
+.register-card {
+  width: 380px;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Title */
+.register-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Input Group */
+.input-group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* Register Button */
+.register-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.register-button:hover {
+  background-color: #218838;
+}
+
+/* Error & Success Messages */
+.error-message {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #d9534f;
+  font-weight: bold;
+}
+
+.success-message {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #28a745;
+  font-weight: bold;
+}

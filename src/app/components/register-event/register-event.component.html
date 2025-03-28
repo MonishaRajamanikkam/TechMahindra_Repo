@@ -1,0 +1,40 @@
+<div class="register-container">
+  <div class="register-card">
+    <h3 class="register-title">📝 Register</h3>
+    
+    <form (ngSubmit)="registerUser()">
+      <!-- Username Input -->
+      <div class="input-group">
+        <label for="username">📧 Email</label>
+        <input 
+          type="email" 
+          id="username" 
+          [(ngModel)]="user.username" 
+          name="username" 
+          required 
+          placeholder="Enter your email"
+        />
+      </div>
+
+      <!-- Password Input -->
+      <div class="input-group">
+        <label for="password">🔒 Password</label>
+        <input 
+          type="password" 
+          id="password" 
+          [(ngModel)]="user.password" 
+          name="password" 
+          required 
+          placeholder="Create a strong password"
+        />
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="register-button"> Register</button>
+
+      <!-- Success/Error Message -->
+      <p *ngIf="registrationError" class="error-message">⚠ Registration failed. Try again.</p>
+      <p *ngIf="registrationSuccess" class="success-message">✅ Registration successful! You can now log in.</p>
+    </form>
+  </div>
+</div>
